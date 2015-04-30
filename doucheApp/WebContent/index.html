@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="./douch.js"></script>
+</head>
+<body>
+<!-- Main page-->
+<div data-role="page" id="main">
+  <div data-role="header">
+	<h1>DoucheList</h1>
+  </div>
+
+	<div data-role="main" class="ui-content">
+	   <ul data-role="listview" id="group-list"> 
+
+	   </ul>
+
+  </div>
+
+  <div data-role="footer" data-position="fixed" style="text-align:center;">
+	  <a id="create-page-bnt" href="#create-group-page" class="ui-btn ui-icon-plus ui-btn-icon-left">Create new</a>
+  </div>
+
+</div>
+<!-- END Main page-->
+
+<!-- Group page-->
+<div data-role="page" id="group">
+  <div data-role="header">
+    <a href="#main" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+	<h1 id="group-page-header-text"><span id="g-header-text">Skole</span></h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+	   <ul data-role="listview" id="payment-list"> 
+		  <li><a href="">Jonas<span class="ui-li-count">25kr</span></a></li>
+		  <li><a href="">kim<span class="ui-li-count">25kr</span></a></li>
+
+		</ul>
+
+  </div>
+
+  	<div data-role="footer" data-position="fixed" style="text-align:center;">
+  		<div data-role="controlgroup" data-type="horizontal">
+
+  	  		<a href="#invite-popup" data-rel="popup" class="ui-btn ui-icon-plus ui-btn-icon-left">Invite</a>
+	  		<a href="#" class="ui-btn ui-icon-plus ui-icon-info ui-btn-icon-left">Members</a>
+
+	  		<a href="#pay-popup" data-rel="popup" class="ui-btn ui-icon-plus ui-btn-icon-left">Pay</a>
+		</div>
+  	</div> 
+
+	<div data-role="popup" id="invite-popup">
+		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+		<form><div style="padding:10px 20px;">
+			<input type="text" name="user" id="un" value="" placeholder="username/email" data-theme="a" class="ui-input-text ui-body-a ui-corner-all ui-shadow-inset">
+			<button type="submit" data-theme="b">Invite</button>
+		</div></form>	
+	</div>
+	<div data-role="popup" id="pay-popup">
+		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+		<div style="padding:10px 20px;">
+			<input type="number" name="user" id="payment-sum" placeholder="sum in NOK" data-theme="a" class="ui-input-text ui-body-a ui-corner-all ui-shadow-inset">
+			<button id="payment-btn" data-theme="b">Pay</button>
+		</div>
+	</div>
+</div>
+<!-- END Group page-->
+<!-- Create Group -->
+<div data-role="page" id="create-group-page">
+  	<div data-role="header">
+    	<a href="#main" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+		<h1>Create Group</h1>
+  	</div>
+
+  	<div data-role="main" class="ui-content">
+	  	<form>
+		     <label for="text-1">Group Name:</label>
+		     <input type="text" name="text-1" id="text-1" value="">
+		     <label for="text-3">Group description:</label>
+		     <input type="text" name="text-3" id="text-3" value="">
+		</form>
+
+  	</div>
+
+  	<div data-role="footer" data-position="fixed" style="text-align:center;">
+	  	<a onclick="createGroup()" id="create-group-ok-btn" href="" class="ui-btn ui-icon-plus ui-btn-icon-left">Create</a>
+  	</div>
+
+</div>
+<!-- END Create Group -->
+
+
+</body>
+</html>
